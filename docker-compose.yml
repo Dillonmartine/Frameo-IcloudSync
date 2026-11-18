@@ -1,0 +1,20 @@
+services:
+  frameo-sync:
+    build: .
+    image: frameo-sync:latest
+    container_name: frameo-sync
+    restart: unless-stopped
+    # Linux hosts: uncomment if the container can't reach the frame on your LAN
+    # network_mode: host
+    environment:
+      ALBUM_URL: "${ALBUM_URL:?Set ALBUM_URL in .env (see .env.example)}"
+      DEVICE: "${DEVICE:-192.168.1.183:5555}"
+      SYNC_INTERVAL_MINUTES: "${SYNC_INTERVAL_MINUTES:-60}"
+      REMOTE_DIR: "/sdcard/DCIM"
+      MAX_DIM: "1920"            # resize longest edge; 0 = keep original size
+      INCLUDE_VIDEOS: "false"
+      ADB_AUTH_WAIT_SECONDS: "120"
+      TZ: "America/New_York"
+    volumes:
+      - ./data:/data
+      - ./adbkeys:/root/.android
