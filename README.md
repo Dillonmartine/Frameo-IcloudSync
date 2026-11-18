@@ -76,7 +76,7 @@ directly in the compose file.
 | Variable | Default | Description |
 |---|---|---|
 | `ALBUM_URL` | **required** | Public link to the shared album. Treat it as a secret |
-| `DEVICE` | `192.168.1.183:5555` | Frame's ADB address |
+| `DEVICE` | `IP:5555` | Frame's ADB address |
 | `SYNC_INTERVAL_MINUTES` | `60` | Clock-aligned: `15` → :00/:15/:30/:45; `120` → every 2 h from midnight |
 | `REMOTE_DIR` | `/sdcard/DCIM` | Destination on the frame |
 | `MAX_DIM` | `1920` | Longest edge in px; `0` = no resize |
