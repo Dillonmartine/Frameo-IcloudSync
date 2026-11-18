@@ -8,7 +8,7 @@ services:
     # network_mode: host
     environment:
       ALBUM_URL: "${ALBUM_URL:?Set ALBUM_URL in .env (see .env.example)}"
-      DEVICE: "${DEVICE:-192.168.1.183:5555}"
+      DEVICE: "${DEVICE:-192.168.2.18:5555}"
       SYNC_INTERVAL_MINUTES: "${SYNC_INTERVAL_MINUTES:-60}"
       REMOTE_DIR: "/sdcard/DCIM"
       MAX_DIM: "1920"            # resize longest edge; 0 = keep original size
