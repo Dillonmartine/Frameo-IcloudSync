@@ -116,7 +116,7 @@ directly in the compose file.
 | `ALBUM_URL is not set` | Create `.env` from `.env.example` |
 | `CloudKit 4xx … could not resolve album` | Album isn't shared by link; turn on **Anyone with the Link** |
 | `sharedstreams` 404 | You're using an iOS 27 album link with an old-style token. Copy the link again from Photos |
-| `state=not connected` | Check from the container: `docker exec frameo-sync python -c "import socket; socket.create_connection(('192.168.1.183',5555),5)"`. On Linux try `network_mode: host`; check firewall/VLAN rules allow the Docker host |
+| `state=not connected` | Check from the container: `docker exec frameo-sync python -c "import socket; socket.create_connection(('IP',5555),5)"`. On Linux try `network_mode: host`; check firewall/VLAN rules allow the Docker host |
 | `state=unauthorized` | Copy a trusted `adbkey`/`adbkey.pub` into `./adbkeys`, then `docker compose restart` |
 | `state=offline` repeatedly | Disconnect other ADB hosts from the frame (`adb disconnect`, `adb kill-server` on your desktop) |
 | Pushed but not on the slideshow | Frameo imports from DCIM only when **Settings → Manage photos → Transfer from computer** is toggled on |
